@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// 扫描 skins/<id>/<version>.zip → 重建 docs/index.json（v1 schema）
+// 扫描 docs/skins/<id>/<version>.zip → 重建 docs/index.json（v1 schema）
 // 用法: node .github/scripts/build-index.mjs
 import { readdir, readFile, stat, writeFile, mkdir } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
@@ -8,7 +8,9 @@ import { fileURLToPath } from 'node:url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
-const skinsDir = path.join(repoRoot, 'skins');
+// 注意：GitHub Pages 为 legacy 模式（只部署 main 分支的 docs/ 目录），
+// 皮肤包必须放在 docs/skins/ 下才能被 Pages 访问（对外路径 /skins/<id>/<version>.zip）。
+const skinsDir = path.join(repoRoot, 'docs', 'skins');
 const docsDir = path.join(repoRoot, 'docs');
 const indexFile = path.join(docsDir, 'index.json');
 

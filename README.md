@@ -9,11 +9,11 @@
 ## 目录结构
 
 ```text
-docs/                        # GitHub Pages 站点根
+docs/                        # GitHub Pages 站点根（legacy：main 分支 docs/ 目录）
 ├── index.json               # 机器索引（桌宠消费，见下方 schema）
 ├── thumbnails/<id>.png      # 卡片缩略图（≤100KB）
-└── index.html               # （可选）人类浏览页
-skins/<id>/<version>.zip     # 皮肤包本体（≥50MB 改挂 Releases，索引存 attach 链接）
+├── index.html               # （可选）人类浏览页
+└── skins/<id>/<version>.zip # 皮肤包本体（必须放 docs/ 下才能被 Pages 访问；≥50MB 改挂 Releases）
 submissions/                 # PR 工作区（合并前暂存）
 .github/
 ├── workflows/build-index.yml    # PR 合并 → 校验 → 重建 index.json → 部署 Pages
@@ -50,7 +50,7 @@ submissions/                 # PR 工作区（合并前暂存）
 
 ## 如何收录新皮肤（维护者）
 
-1. 作者按《角色包制作指南》制作并通过 `validate:pack` 自检，提交 zip 到 `skins/<id>/<version>.zip`（PR 或 Issue）
+1. 作者按《角色包制作指南》制作并通过 `validate:pack` 自检，提交 zip 到 `docs/skins/<id>/<version>.zip`（PR 或 Issue）
 2. 按《审核标准.md》核对（pack-validator 通过 / license 合法 / id 不冲突 / 无 NSFW 侵权素材）
 3. 合并 PR → GitHub Action 自动：校验 zip → 生成缩略图 → 计算 sha256/size → 重建 `docs/index.json` → 部署 Pages
 

@@ -9,6 +9,7 @@ import { fileURLToPath } from 'node:url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const repoRoot = path.resolve(__dirname, '../..');
 const indexFile = path.join(repoRoot, 'docs/index.json');
+// 皮肤包位于 docs/skins/（Pages legacy 模式只服务 docs/），见 build-index.mjs 注释
 
 const LICENSE_ENUM = new Set(['CC0', 'CC-BY-4.0', 'CC-BY-NC-4.0', 'MIT', 'CUSTOM', 'RIGHTS_RESERVED']);
 const errors = [];
@@ -43,7 +44,7 @@ for (const [i, s] of (index.skins ?? []).entries()) {
     try {
       const m = s.downloadUrl.match(/\/skins\/([^/]+)\/([^/]+)\.zip$/);
       if (m) {
-        const zipPath = path.join(repoRoot, 'skins', m[1], `${m[2]}.zip`);
+        const zipPath = path.join(repoRoot, 'docs', 'skins', m[1], `${m[2]}.zip`);
         const actual = await sha256(zipPath);
         if (actual !== s.sha256) errors.push(`${tag} sha256 与 zip 不符`);
         const st = await stat(zipPath);

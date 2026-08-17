@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
     paths:
-      - 'skins/**'
+      - 'docs/skins/**'
       - 'submissions/**'
       - 'docs/thumbnails/**'
   workflow_dispatch:
@@ -27,7 +27,7 @@ jobs:
         with:
           node-version: 22
 
-      - name: Build index.json from skins/
+      - name: Build index.json from docs/skins/
         run: node .github/scripts/build-index.mjs
 
       - name: Verify index.json
