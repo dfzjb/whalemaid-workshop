@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17T14:01:43.742Z",
+  "updatedAt": "2026-08-17T14:28:31.297Z",
   "skins": [
     {
       "id": "gpt-girl",
@@ -22,8 +22,28 @@
       "downloadUrl": "https://dfzjb.github.io/whalemaid-workshop/skins/gpt-girl/2.0.0.zip",
       "sha256": "7353abc756d7189b73ab503724eaac20332102b8ae52fe3da0e577df83f1019a",
       "sizeBytes": 14778342,
-      "uploadedAt": "2026-08-17T14:01:43.742Z",
+      "uploadedAt": "2026-08-17T14:28:31.267Z",
       "official": true
+    },
+    {
+      "id": "uploader-test",
+      "displayName": "小绿（GPT娘）",
+      "author": "像素桌宠项目组",
+      "version": "2.0.0",
+      "license": "CC-BY-NC-4.0",
+      "summary": "网关全链路测试包",
+      "tags": [
+        "test",
+        "uploader"
+      ],
+      "stateCount": 36,
+      "frameCount": 92,
+      "thumbnail": "thumbnails/uploader-test.png",
+      "downloadUrl": "https://dfzjb.github.io/whalemaid-workshop/skins/uploader-test/2.0.0.zip",
+      "sha256": "5273be32d8fcc7367d63794458223b1ceab7fbf63830370b81bf11b8ae671f74",
+      "sizeBytes": 14778351,
+      "uploadedAt": "2026-08-17T14:28:31.282Z",
+      "official": false
     }
   ]
 }
