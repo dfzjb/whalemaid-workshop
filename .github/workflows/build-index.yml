@@ -11,8 +11,6 @@ on:
 
 permissions:
   contents: write
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -47,17 +45,5 @@ jobs:
             git push
           fi
 
-      - name: Upload Pages artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: docs
-
-  deploy-pages:
-    needs: build-index
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+# 注：Pages 为 legacy 模式（仓库 Settings → Pages → Deploy from branch: main/docs）。
+# 提交 docs/ 变更后 GitHub 自动重新部署，无需 deploy-pages action。
