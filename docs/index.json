@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17T14:00:57.271Z",
+  "updatedAt": "2026-08-17T14:01:43.742Z",
   "skins": [
     {
       "id": "gpt-girl",
@@ -22,7 +22,7 @@
       "downloadUrl": "https://dfzjb.github.io/whalemaid-workshop/skins/gpt-girl/2.0.0.zip",
       "sha256": "7353abc756d7189b73ab503724eaac20332102b8ae52fe3da0e577df83f1019a",
       "sizeBytes": 14778342,
-      "uploadedAt": "2026-08-17T14:00:57.270Z",
+      "uploadedAt": "2026-08-17T14:01:43.742Z",
       "official": true
     }
   ]
