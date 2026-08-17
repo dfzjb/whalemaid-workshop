@@ -1,0 +1,11 @@
+{
+  "id": "gpt-girl",
+  "displayName": "小绿（GPT娘）",
+  "author": "像素桌宠项目组",
+  "license": "CC-BY-NC-4.0",
+  "summary": "ChatGPT 拟人化像素风女仆，温柔害羞的第二角色（86 帧全状态版）",
+  "tags": ["pixel-art", "maid", "ai-girl", "gpt", "green"],
+  "stateCount": 36,
+  "frameCount": 86,
+  "official": true
+}

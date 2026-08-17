@@ -1,5 +1,29 @@
 {
   "version": 1,
-  "updatedAt": "2026-08-17T12:44:53.547Z",
-  "skins": []
+  "updatedAt": "2026-08-17T13:45:23.742Z",
+  "skins": [
+    {
+      "id": "gpt-girl",
+      "displayName": "小绿（GPT娘）",
+      "author": "像素桌宠项目组",
+      "version": "2.0.0",
+      "license": "CC-BY-NC-4.0",
+      "summary": "ChatGPT 拟人化像素风女仆，温柔害羞的第二角色（86 帧全状态版）",
+      "tags": [
+        "pixel-art",
+        "maid",
+        "ai-girl",
+        "gpt",
+        "green"
+      ],
+      "stateCount": 36,
+      "frameCount": 86,
+      "thumbnail": "thumbnails/gpt-girl.png",
+      "downloadUrl": "https://dfzjb.github.io/whalemaid-workshop/skins/gpt-girl/2.0.0.zip",
+      "sha256": "7353abc756d7189b73ab503724eaac20332102b8ae52fe3da0e577df83f1019a",
+      "sizeBytes": 14778342,
+      "uploadedAt": "2026-08-17T13:45:23.741Z",
+      "official": true
+    }
+  ]
 }
