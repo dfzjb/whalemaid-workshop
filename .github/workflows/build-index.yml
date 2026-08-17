@@ -1,0 +1,63 @@
+name: Build Workshop Index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'skins/**'
+      - 'submissions/**'
+      - 'docs/thumbnails/**'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Build index.json from skins/
+        run: node .github/scripts/build-index.mjs
+
+      - name: Verify index.json
+        run: node .github/scripts/verify-index.mjs
+
+      - name: Commit index changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs/index.json docs/thumbnails
+          if git diff --cached --quiet; then
+            echo "no index changes"
+          else
+            git commit -m "chore: rebuild workshop index"
+            git push
+          fi
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: docs
+
+  deploy-pages:
+    needs: build-index
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
